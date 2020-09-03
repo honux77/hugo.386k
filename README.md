@@ -1,4 +1,15 @@
-# HUGO.386
+# hugo.386k
+
+hugo.386k는 HUGO.386(https:///gitlab.com/maxlefou/hugo.386)을 포크해서 한글 폰트와 코드 블록 색을 변경한 테마입니다.
+
+자세한 설명은 아래를 참고하세요.
+
+## 한글 글꼴
+
+- https://cactus.tistory.com/193 의 둥근모글꼴을 사용했습니다.
+
+## HUGO.386
+
 HUGO.386 is a port of the [BOOTSTRA.386](//github.com/kristopolous/BOOTSTRA.386) theme. It has a cool MS-DOS feeling and is ready to be used for blogs. Despite its antique look, the theme is responsive and can be viewed on mobile devices.
 
 ## [Test it on live here!](//maxlefou.gitlab.io/hugo.386-test/)
@@ -6,9 +17,10 @@ HUGO.386 is a port of the [BOOTSTRA.386](//github.com/kristopolous/BOOTSTRA.386)
 ![Example of Hugo blog with the theme](images/screenshot.png)
 
 ## Installation
+
 Inside the folder of your Hugo site run:
 
-    $ git submodule add https://gitlab.com/maxlefou/hugo.386 themes/hugo.386
+    $ git submodule add https://github.com/honux77/hugo.386k themes/hugo.386k
 
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
