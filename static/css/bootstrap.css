@@ -1045,7 +1045,7 @@ pre {
   word-wrap: break-word;
   white-space: pre;
   white-space: pre-wrap;
-  background-color: #000000;
+  background-color: #2f2f2f;
   border: 0;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
@@ -1058,7 +1058,7 @@ pre.prettyprint {
 
 pre code {
   padding: 0;
-  color: inherit;
+  color: #3bec3b;
   white-space: pre;
   white-space: pre-wrap;
   background-color: transparent;
