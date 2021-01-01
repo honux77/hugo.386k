@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no" />
     <meta name="theme-color" content="#000084" />
+    <meta property="og:title" content="{{ .Title }} - {{ .Date.Format "Mon, Jan 2, 2006" }}">
+    <meta property="og:description" content="{{ .Params.description }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}/img/hugo-og.png">
     <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
     <link rel="canonical" href="{{ .Site.BaseURL }}">
     {{/* Don't ask why it's like this. This original theme is a mess... */}}
