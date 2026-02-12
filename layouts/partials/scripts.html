@@ -1,28 +1,28 @@
-<link rel="stylesheet" href="{{ "/css/bootstrap.css" | relURL }}">
-<link rel="stylesheet" href="{{ "/css/bootstrap-responsive.css" | relURL }}">
-<link rel="stylesheet" href="{{ "/css/style.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/bootstrap.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/bootstrap-responsive.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 {{ range .Site.Params.customCSS -}}
-<link rel="stylesheet" href="{{ . | relURL }}">
+<link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
-<script src="{{ "/js/jquery.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-386.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-transition.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-alert.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-modal.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-dropdown.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-scrollspy.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-tab.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-tooltip.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-popover.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-button.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-collapse.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-carousel.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-typeahead.js" | relURL }}"></script>
-<script src="{{ "/js/bootstrap-affix.js" | relURL }}"></script>
+<script src="{{ "js/jquery.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-386.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-transition.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-alert.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-modal.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-dropdown.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-scrollspy.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-tab.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-tooltip.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-popover.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-button.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-collapse.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-carousel.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-typeahead.js" | absURL }}"></script>
+<script src="{{ "js/bootstrap-affix.js" | absURL }}"></script>
 <script>
-    _386 = { 
+    _386 = {
         fastLoad:{{ .Site.Params.loadfastload }},
-        onePass:{{ .Site.Params.loadonepass }}, 
+        onePass:{{ .Site.Params.loadonepass }},
         speedFactor:{{ .Site.Params.loadspeedfactor }}
     };
 
@@ -32,5 +32,5 @@
     };
 </script>
 {{- range .Site.Params.customJS }}
-<script src="{{ . | relURL }}"></script>
+<script src="{{ . | absURL }}"></script>
 {{- end }}
