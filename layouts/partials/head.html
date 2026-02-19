@@ -10,7 +10,12 @@
     {{/* OG image: 1) front matter image param 2) first image in content 3) default OG image */}}
     {{ $ogImage := "" }}
     {{ with .Params.image }}
-        {{ $ogImage = . | absURL }}
+        {{/* absURL strips subdirectory from baseURL for absolute paths, so use printf instead */}}
+        {{ if hasPrefix . "http" }}
+            {{ $ogImage = . }}
+        {{ else }}
+            {{ $ogImage = printf "%s%s" ($.Site.BaseURL | strings.TrimSuffix "/") . }}
+        {{ end }}
     {{ else }}
         {{ $imgMatches := findRE `<img[^>]+src="([^"]+)"` .Content 1 }}
         {{ if $imgMatches }}
