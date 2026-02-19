@@ -7,7 +7,20 @@
     <meta name="theme-color" content="#000084" />
     <meta property="og:title" content="{{ .Title }} - {{ .Date.Format "Mon, Jan 2, 2006" }}">
     <meta property="og:description" content="{{ .Params.description }}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}/img/hugo-og.png">
+    {{/* OG image: 1) front matter image param 2) first image in content 3) default OG image */}}
+    {{ $ogImage := "" }}
+    {{ with .Params.image }}
+        {{ $ogImage = . | absURL }}
+    {{ else }}
+        {{ $imgMatches := findRE `<img[^>]+src="([^"]+)"` .Content 1 }}
+        {{ if $imgMatches }}
+            {{ $ogImage = index $imgMatches 0 | replaceRE `.*src="([^"]+)".*` "$1" }}
+        {{ end }}
+    {{ end }}
+    {{ if not $ogImage }}
+        {{ $ogImage = printf "%s/img/hugo-og.png" (.Site.BaseURL | strings.TrimSuffix "/") }}
+    {{ end }}
+    <meta property="og:image" content="{{ $ogImage }}">
     <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
     <link rel="canonical" href="{{ .Site.BaseURL }}">
     {{/* Don't ask why it's like this. This original theme is a mess... */}}

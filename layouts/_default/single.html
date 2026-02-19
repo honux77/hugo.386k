@@ -5,7 +5,19 @@
         <h1>{{ .Title }} - {{ .Date.Format "Mon, Jan 2, 2006" }}</h1>
     </div>
     <p class="lead">{{ .Params.description }}</p>
+
+    {{/* Goatcounter page view badge */}}
+    {{ with .Site.Params.goatcounterCode }}
+    <p>
+        <img src="https://{{ . }}.goatcounter.com/counter/{{ $.RelPermalink | urlquery }}.svg" alt="views" onerror="this.parentElement.style.display='none'">
+    </p>
+    {{ end }}
+
     {{ .Content }}
+
+    {{/* Giscus comments */}}
+    {{ partial "comments.html" . }}
+
     <h4><a href="{{ .Site.BaseURL }}">{{ i18n "backtohome" }}</a></h4>
 </div>
 
